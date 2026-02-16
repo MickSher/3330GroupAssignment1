@@ -1,2 +1,6 @@
 /Main.class
 /Room.class
+/TimeSlot.class
+/Reservation.class
+/ReservationBook.class
+/ReservationManager.class
