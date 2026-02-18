@@ -25,7 +25,7 @@ public class ReservationBook {
 		}
 		for (int i = 0; i < count; i++) {
 			r = reservations[i];
-			if(r.id == id){
+			if(r.Id == id){
 				return r;
 			}
 		}
