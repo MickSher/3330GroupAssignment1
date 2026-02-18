@@ -25,7 +25,7 @@ public class ReservationBook {
 		}
 		for (int i = 0; i < count; i++) {
 			r = reservations[i];
-			if(r.Id == id){
+			if(r.getID() == id){
 				return r;
 			}
 		}
@@ -41,7 +41,7 @@ public class ReservationBook {
 	
 	public void printForRoom(Room room) {
 		for (int i = 0; i < count; i++) {
-			if (room.name.compareToIgnoreCase(reservations[i].room.name)==0) {
+			if (room.compareNames(reservations[i].getRoom())==0) {
 				System.out.println(reservations[i]);
 			}
 			

@@ -52,6 +52,16 @@ public class Reservation {
 		}
 		return true;
 	}
+
+	public int getID() {
+		return ID;
+	}
+	
+	public Room getRoom() {
+		return this.room;
+	}
+	
+	
 	
 	
 	

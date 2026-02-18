@@ -37,4 +37,8 @@ public class Room {
 	public String toString() {
 		return(roomName + " (cap " + capacity + ")");
 	}
+	
+	public int compareNames(Room other) {
+		return this.roomName.compareToIgnoreCase(other.roomName);
+	}
 }
