@@ -1,16 +1,11 @@
 package CS3330.GA1;
 
-import java.lang.foreign.AddressLayout;
-import java.util.Iterator;
-
 public class ReservationBook {
 	private Reservation[] reservations;
 	private int count = 0;
 
-	public ReservationBook(int numRooms) {
-		if (numRooms > 0) {
-			reservations = new Reservation[numRooms];
-		}
+	public ReservationBook() {
+		this.reservations = new Reservation[48];
 	}
 
 	public boolean add(Reservation r) {
@@ -46,7 +41,7 @@ public class ReservationBook {
 	
 	public void printForRoom(Room room) {
 		for (int i = 0; i < count; i++) {
-			if (Integer. room.name.compareToIgnoreCase(reservations[i].room.name)) {
+			if (room.name.compareToIgnoreCase(reservations[i].room.name)==0) {
 				System.out.println(reservations[i]);
 			}
 			

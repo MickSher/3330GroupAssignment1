@@ -1,1 +1,4 @@
-# 2026-Java-Learning
+# 3330 Group assignment 1
+
+A reservation system made in eclipse
+
