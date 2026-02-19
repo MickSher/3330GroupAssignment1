@@ -4,48 +4,59 @@ public class ReservationBook {
 	private Reservation[] reservations;
 	private int count = 0;
 
-	public ReservationBook() {
-		this.reservations = new Reservation[48];
+	public ReservationBook(int numReservations) {
+		this.reservations = new Reservation[numReservations];
 	}
 
 	public boolean add(Reservation r) {
-		if (count == reservations.length) {
-			return false;
+		if (this.count == this.reservations.length) {
+			throw new IllegalAccessError();
 		}
-		reservations[count] = r;
-		count++;
+		this.reservations[count] = r;
+		this.count++;
 
 		return true;
 	}
-	
+
 	public Reservation findById(int id) {
 		Reservation r;
-		if(id < 0) {
+		if (id < 0) {
 			return null;
 		}
 		for (int i = 0; i < count; i++) {
-			r = reservations[i];
-			if(r.getID() == id){
+			r = this.reservations[i];
+			if (r.getID() == id) {
 				return r;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public void printAll() {
 		for (int i = 0; i < count; i++) {
-			System.out.println(reservations[i]);
+			System.out.println(this.reservations[i]);
 		}
 	}
-	
+
 	public void printForRoom(Room room) {
 		for (int i = 0; i < count; i++) {
-			if (room.compareNames(reservations[i].getRoom())==0) {
-				System.out.println(reservations[i]);
+			if (room.compareNames(this.reservations[i].getRoom()) == 0) {
+				System.out.println(this.reservations[i]);
 			}
-			
+
 		}
+	}
+
+	public boolean cancelReservation(int id) {
+		Reservation r = this.findById(id);
+		return r.cancel();
+		;
+	}
+	public boolean checkInReservation(int id) {
+		Reservation r = this.findById(id);
+		return r.checkIn();
+		;
 	}
 
 }
