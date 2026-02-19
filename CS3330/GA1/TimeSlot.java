@@ -13,10 +13,10 @@ public class TimeSlot {
 	
 	@Override
 	public String toString() {
-		if (hour != 23) {
-			return(hour + ":00-" + (hour+1) +":00");
-		}
-		return("23:00-0:00");
+		
+			return(hour + ":00-" + ((hour+1)%24) +":00");
+		
+		
 	}
 	
 }

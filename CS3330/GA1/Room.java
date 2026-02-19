@@ -35,7 +35,7 @@ public class Room {
 	
 	@Override
 	public String toString() {
-		return(roomName + " (cap " + capacity + ")");
+		return(this.roomName + " (cap " + capacity + ")");
 	}
 	
 	public int compareNames(Room other) {
