@@ -17,7 +17,7 @@ public class Room {
 		if (userCount < 0) {
 			throw new IllegalArgumentException();
 		}
-		else if (this.capacity < userCount) {
+		else if (capacity < userCount) {
 			return false;
 		}
 		return true;
@@ -25,20 +25,20 @@ public class Room {
 	
 	//getters
 	public int getCapacity() {
-		return this.capacity;
+		return capacity;
 	}
 	
 	public String getName() {
-		return this.roomName;
+		return roomName;
 	}
 	
 	
 	@Override
 	public String toString() {
-		return(this.roomName + " (cap " + capacity + ")");
+		return(roomName + " (cap " + capacity + ")");
 	}
 	
 	public int compareNames(Room other) {
-		return this.roomName.compareToIgnoreCase(other.roomName);
+		return roomName.compareToIgnoreCase(other.roomName);
 	}
 }

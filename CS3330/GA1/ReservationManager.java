@@ -5,21 +5,21 @@ public class ReservationManager {
 	private static int idGenerator = 0;
 
 	public ReservationManager(int numReservations) {
-		this.reservationBook = new ReservationBook(numReservations);
+		reservationBook = new ReservationBook(numReservations);
 	}
 	
 	public boolean createReservation(Room room, String studentName, TimeSlot slot) {
 		Reservation reservation = new Reservation(idGenerator++, room, studentName, slot);
 		
-		return this.reservationBook.add(reservation);
+		return reservationBook.add(reservation);
 	}
 	
 	public boolean cancelReservation(int id) {
-		return this.reservationBook.cancelReservation(id);
+		return reservationBook.cancelReservation(id);
 	}
 	
 	public boolean checkInReservation(int id) {
-		return this.reservationBook.checkInReservation(id);
+		return reservationBook.checkInReservation(id);
 	}
 	
 	public void printAllReservations() {

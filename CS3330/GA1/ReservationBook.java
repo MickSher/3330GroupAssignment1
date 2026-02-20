@@ -5,15 +5,15 @@ public class ReservationBook {
 	private int count = 0;
 
 	public ReservationBook(int numReservations) {
-		this.reservations = new Reservation[numReservations];
+		reservations = new Reservation[numReservations];
 	}
 
 	public boolean add(Reservation r) {
-		if (this.count == this.reservations.length) {
+		if (count == reservations.length) {
 			throw new IllegalAccessError();
 		}
-		this.reservations[count] = r;
-		this.count++;
+		reservations[count] = r;
+		count++;
 
 		return true;
 	}
@@ -24,7 +24,7 @@ public class ReservationBook {
 			return null;
 		}
 		for (int i = 0; i < count; i++) {
-			r = this.reservations[i];
+			r = reservations[i];
 			if (r.getID() == id) {
 				return r;
 			}
@@ -35,26 +35,26 @@ public class ReservationBook {
 
 	public void printAll() {
 		for (int i = 0; i < count; i++) {
-			System.out.println(this.reservations[i]);
+			System.out.println(reservations[i]);
 		}
 	}
 
 	public void printForRoom(Room room) {
 		for (int i = 0; i < count; i++) {
-			if (room.compareNames(this.reservations[i].getRoom()) == 0) {
-				System.out.println(this.reservations[i]);
+			if (room.compareNames(reservations[i].getRoom()) == 0) {
+				System.out.println(reservations[i]);
 			}
 
 		}
 	}
 
 	public boolean cancelReservation(int id) {
-		Reservation r = this.findById(id);
+		Reservation r = findById(id);
 		return r.cancel();
 		
 	}
 	public boolean checkInReservation(int id) {
-		Reservation r = this.findById(id);
+		Reservation r = findById(id);
 		return r.checkIn();
 		
 	}

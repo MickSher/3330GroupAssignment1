@@ -24,49 +24,49 @@ public class Reservation {
 
 	public boolean checkIn() {
 		// do we want to throw an exception or just make canceled false?
-		if (this.canceled || this.checkedIn) {
+		if (canceled || checkedIn) {
 			return false;
 		}
-		this.checkedIn = true;
+		checkedIn = true;
 		return true;
 	}
 
 	public boolean cancel() {
 		// do we want to throw an exception or just make checkedIn false?
-		if (this.isActive() || this.canceled) {
+		if (isActive() || canceled) {
 			return false;
 		}
-		this.canceled = true;
+		canceled = true;
 		return true;
 	}
 
 	public boolean isActive() {
-		if (this.checkedIn) {
+		if (checkedIn) {
 			return true;
 		}
 		return false;
 	}
 
 	public boolean canCheckIn() {
-		if (this.canceled || this.checkedIn) {
+		if (canceled || checkedIn) {
 			return false;
 		}
 		return true;
 	}
 
 	public int getID() {
-		return this.ID;
+		return ID;
 	}
 
 	public Room getRoom() {
-		return this.room;
+		return room;
 	}
 
 	@Override
 	public String toString() {
-		return "Reservation number " + this.ID + " made by " + this.studentName + " for " + this.room.toString()
-				+ " at " + this.timeSlot.toString() + (this.checkedIn ? " that has been checked in" : "")
-				+ (this.canceled ? " that has been canceled" : "");
+		return "Reservation number " + ID + " made by " + studentName + " for " + room.toString()
+				+ " at " + timeSlot.toString() + (checkedIn ? " that has been checked in" : "")
+				+ (canceled ? " that has been canceled" : "");
 	}
 
 }
