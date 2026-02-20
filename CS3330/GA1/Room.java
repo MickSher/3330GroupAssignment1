@@ -39,6 +39,6 @@ public class Room {
 	}
 	
 	public int compareNames(Room other) {
-		return roomName.compareToIgnoreCase(other.roomName);
+		return roomName.compareTo(other.roomName);
 	}
 }

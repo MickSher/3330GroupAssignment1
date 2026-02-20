@@ -5,6 +5,9 @@ public class ReservationManager {
 	private static int idGenerator = 0;
 
 	public ReservationManager(int numReservations) {
+		if (numReservations<0) {
+			throw new IllegalArgumentException("Can't hold negative reservations");
+		}
 		reservationBook = new ReservationBook(numReservations);
 	}
 	

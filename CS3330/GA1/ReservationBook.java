@@ -5,6 +5,9 @@ public class ReservationBook {
 	private int count = 0;
 
 	public ReservationBook(int numReservations) {
+		if (numReservations<=0) {
+			throw new IllegalArgumentException("Can't have less than one reservations");
+		}
 		reservations = new Reservation[numReservations];
 	}
 
@@ -41,7 +44,9 @@ public class ReservationBook {
 
 	public void printForRoom(Room room) {
 		for (int i = 0; i < count; i++) {
-			if (room.compareNames(reservations[i].getRoom()) == 0) {
+			// Compares room names using the String class .compareTo()
+			// reduces unnecessary access by giving the reservation the room to compare to it's room
+			if (reservations[i].compareRooms(room) == 0) {
 				System.out.println(reservations[i]);
 			}
 

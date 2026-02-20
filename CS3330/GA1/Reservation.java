@@ -61,12 +61,18 @@ public class Reservation {
 	public Room getRoom() {
 		return room;
 	}
+	
+	
 
 	@Override
 	public String toString() {
 		return "Reservation number " + ID + " made by " + studentName + " for " + room.toString()
 				+ " at " + timeSlot.toString() + (checkedIn ? " that has been checked in" : "")
 				+ (canceled ? " that has been canceled" : "");
+	}
+
+	public int compareRooms(Room room) {
+		return this.room.compareNames(room);
 	}
 
 }
