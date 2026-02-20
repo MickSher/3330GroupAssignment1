@@ -64,7 +64,7 @@ public class Reservation {
 
 	@Override
 	public String toString() {
-		return "Reservation number " + this.ID + " made by " + this.studentName + " for room " + this.room.toString()
+		return "Reservation number " + this.ID + " made by " + this.studentName + " for " + this.room.toString()
 				+ " at " + this.timeSlot.toString() + (this.checkedIn ? " that has been checked in" : "")
 				+ (this.canceled ? " that has been canceled" : "");
 	}

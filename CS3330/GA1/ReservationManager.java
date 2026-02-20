@@ -21,4 +21,12 @@ public class ReservationManager {
 	public boolean checkInReservation(int id) {
 		return this.reservationBook.checkInReservation(id);
 	}
+	
+	public void printAllReservations() {
+		reservationBook.printAll();
+	}
+	
+	public void printRoomReservations(Room room) {
+		reservationBook.printForRoom(room);
+	}
 }

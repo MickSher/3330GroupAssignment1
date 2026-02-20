@@ -51,12 +51,12 @@ public class ReservationBook {
 	public boolean cancelReservation(int id) {
 		Reservation r = this.findById(id);
 		return r.cancel();
-		;
+		
 	}
 	public boolean checkInReservation(int id) {
 		Reservation r = this.findById(id);
 		return r.checkIn();
-		;
+		
 	}
 
 }
